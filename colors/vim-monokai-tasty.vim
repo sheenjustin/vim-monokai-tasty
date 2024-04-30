@@ -387,8 +387,7 @@ call Highlight('htmlArg', { 'fg': s:light_green, 'bg': s:none, 'style': s:none }
 " }}}
 
 " CFML {{{
-call Highlight('cfTagName', { 'fg': s:orange, 'bg': s:none, 'style': s:none })
-call Highlight('cfSetTagEnd', { 'fg': s:none, 'bg': s:none, 'style': s:none })
+call Highlight('cfScope', { 'fg': s:orange, 'bg': s:none, 'style': s:none })
 " }}}
 
 " JSX {{{
