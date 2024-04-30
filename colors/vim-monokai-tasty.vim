@@ -134,7 +134,7 @@ call Highlight('ColorColumn', { 'fg': s:none, 'bg': s:light_charcoal, 'style': s
 call Highlight('Conceal', { 'fg': s:none, 'bg': s:none, 'style': s:none })
 call Highlight('CursorLine', { 'bg': s:light_charcoal, 'style': s:none })
 call Highlight('LineNrBe', { 'fg': s:light_green, 'style': s:none })
-call Highlight('Type', { 'fg': s:none, 'bg': s:none, 'style': s:none })
+call Highlight('Type', { 'fg': s:light_green, 'bg': s:none, 'style': s:none })
 call Highlight('Visual', { 'fg': s:none, 'bg': s:dark_grey, 'style': s:none })
 call Highlight('TabLine', { 'fg': s:light_grey, 'bg': s:dark_grey, 'style': s:underline })
 call Highlight('Whitespace', { 'fg': s:dark_grey, 'bg': s:none, 'style': s:none })
@@ -182,7 +182,7 @@ call Highlight('Question', { 'fg': s:light_blue, 'bg': s:none, 'style': s:none }
 call Highlight('StorageClass', { 'fg': s:light_blue, 'bg': s:none, 'style': s:italic })
 call Highlight('Structure', { 'fg': s:light_blue, 'bg': s:none, 'style': s:none })
 call Highlight('Typedef', { 'fg': s:light_blue, 'bg': s:none, 'style': s:none })
-call Highlight('Function', { 'fg': s:light_green, 'bg': s:none, 'style': s:none })
+call Highlight('Function', { 'fg': s:light_blue, 'bg': s:none, 'style': s:none })
 call Highlight('PreCondit', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
 call Highlight('Constant', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
 call Highlight('Directory', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
@@ -384,6 +384,11 @@ call Highlight('htmlTag', { 'fg': s:white, 'bg': s:none, 'style': s:none })
 call Highlight('htmlTagN', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
 call Highlight('htmlEndTag', { 'fg': s:white, 'bg': s:none, 'style': s:none })
 call Highlight('htmlArg', { 'fg': s:light_green, 'bg': s:none, 'style': s:none })
+" }}}
+
+" CFML {{{
+call Highlight('cfTagName', { 'fg': s:orange, 'bg': s:none, 'style': s:none })
+call Highlight('cfSetTagEnd', { 'fg': s:none, 'bg': s:none, 'style': s:none })
 " }}}
 
 " JSX {{{
