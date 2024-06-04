@@ -555,7 +555,10 @@ call Highlight('CalRuler', { 'fg': s:grey, 'bg': s:darker_grey, 'style': s:bold 
 " }}}
 
 " Markdown {{{
+highlight default link markdownTODO Todo
+
 call Highlight('markdownCode', { 'fg': s:purple, 'bg': s:none, 'style': s:bold })
+call Highlight('markdownCodeBlock', { 'fg': s:light_blue, 'bg': s:none, 'style': s:none })
 call Highlight('markdownCodeDelimiter', { 'fg': s:light_green })
 call Highlight('markdownLinkTextDelimiter', { 'fg': s:light_blue })
 call Highlight('markdownLinkDelimiter', { 'fg': s:light_blue })
@@ -622,9 +625,9 @@ call Highlight('netrwClassify', { 'fg': s:purple, 'bg': s:none, 'style': s:none 
 " Nvim LSP {{{
 call Highlight('DiagnosticError', { 'fg': { 'cterm': 197, 'gui': '#fd2c40' }})
 hi link LspDiagnosticsDefaultError DiagnosticError
-call Highlight('DiagnosticWarn', { 'fg': s:yellow, 'bg': s:none, 'style': s:none })
+call Highlight('DiagnosticWarn', { 'fg': s:orange, 'bg': s:none, 'style': s:none })
 hi link LspDiagnosticsDefaultWarning DiagnosticWarn
-call Highlight('DiagnosticInfo', { 'fg': s:white, 'bg': s:none, 'style': s:none })
+call Highlight('DiagnosticInfo', { 'fg': s:light_grey, 'bg': s:none, 'style': s:none })
 hi link LspDiagnosticsDefaultInfo DiagnosticInfo
 call Highlight('DiagnosticHint', { 'fg': s:light_grey, 'bg': s:none, 'style': s:none })
 hi link LspDiagnosticsDefaultHint DiagnosticHint
@@ -679,7 +682,7 @@ if (has('nvim-0.8'))
   " }}}
 
   " TypeScript {{{
-  call Highlight('@lsp.type.parameter.typescript', { 'fg': s:none, 'bg': s:none, 'style': s:none })
+  call Highlight('@lsp.type.parameter.typescript', { 'fg': s:orange, 'bg': s:none, 'style': s:none })
   call Highlight('@lsp.type.variable.typescript', { 'fg': s:none, 'bg': s:none, 'style': s:none })
   call Highlight('@lsp.type.property.typescript', { 'fg': s:none, 'bg': s:none, 'style': s:none })
   call Highlight('@lsp.type.namespace.typescript', { 'fg': s:none, 'bg': s:none, 'style': s:none })
