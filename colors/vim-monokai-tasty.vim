@@ -28,33 +28,6 @@ function! Highlight(group, colour)
 endfunction
 " }}}
 
-" Colours {{{
-let s:purple = { 'cterm': 141, 'gui': '#AF87FF' }
-let s:light_green = { 'cterm': 148, 'gui': '#A4E400' }
-let s:light_blue = { 'cterm': 81, 'gui': '#62D8F1' }
-let s:magenta = { 'cterm': 197, 'gui': '#FC1A70' }
-let s:orange = { 'cterm': 208, 'gui': '#FF9700' }
-
-let s:off_white = { 'cterm': 251, 'gui': '#CCCCCC' }
-let s:white = { 'cterm': 231, 'gui': '#FFFFFF' }
-let s:black = { 'cterm': 0, 'gui': '#000000' }
-
-let s:danger = { 'cterm': 197, 'gui': '#FF005F' }
-let s:dark_highlight = { 'cterm': 0, 'gui': '#0B0E10' }
-
-" Git diff colours.
-let s:diff_delete_fg = { 'cterm': 1, 'gui': '#5F0000' }
-let s:diff_delete_bg = { 'cterm': 52, 'gui': '#3B0E10' }
-let s:dark_green = { 'cterm': 22, 'gui': '#0f3315' }
-let s:diff_text = { 'cterm': 33, 'gui': '#3B3E54' }
-let s:diff_change = { 'cterm': 60, 'gui': '#252b3e' }
-
-let s:none = { 'cterm': 'NONE', 'gui': 'NONE' }
-let s:bold = { 'cterm': 'bold', 'gui': 'bold' }
-let s:underline = { 'cterm': 'underline', 'gui': 'underline' }
-let s:bold_underline = { 'cterm': 'bold,underline', 'gui': 'bold,underline' }
-" }}}
-
 " Config - vim_monokai_tasty_machine_tint {{{
 if !exists('g:vim_monokai_tasty_machine_tint')
   let g:vim_monokai_tasty_machine_tint = 0
@@ -83,6 +56,35 @@ else
 endif
 
 " }}}
+
+" Colours {{{
+let s:purple = { 'cterm': 141, 'gui': '#AF87FF' }
+let s:light_green = { 'cterm': 148, 'gui': '#A4E400' }
+let s:light_blue = { 'cterm': 81, 'gui': '#62D8F1' }
+let s:magenta = { 'cterm': 197, 'gui': '#FC1A70' }
+let s:orange = { 'cterm': 208, 'gui': '#FF9700' }
+
+let s:off_white = { 'cterm': 251, 'gui': '#CCCCCC' }
+let s:white = { 'cterm': 231, 'gui': '#FFFFFF' }
+let s:black = { 'cterm': 0, 'gui': '#000000' }
+
+let s:danger = { 'cterm': 197, 'gui': '#FF005F' }
+let s:dark_highlight = { 'cterm': 0, 'gui': '#0B0E10' }
+
+" Git diff colours.
+let s:diff_delete_fg = s:magenta
+let s:diff_delete_bg = s:charcoal
+let s:dark_green = s:light_green
+let s:diff_text = s:orange
+let s:diff_change = s:orange
+
+let s:none = { 'cterm': 'NONE', 'gui': 'NONE' }
+let s:bold = { 'cterm': 'bold', 'gui': 'bold' }
+let s:underline = { 'cterm': 'underline', 'gui': 'underline' }
+let s:bold_underline = { 'cterm': 'bold,underline', 'gui': 'bold,underline' }
+" }}}
+
+
 
 " Config - vim_monokai_tasty_italic {{{
 " If user has not set italics, set based on terminal support
@@ -159,10 +161,10 @@ call Highlight('Operator', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
 call Highlight('PreProc', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
 call Highlight('Statement', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
 call Highlight('Repeat', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
-call Highlight('DiffChange', { 'fg': s:none, 'bg': s:diff_change, 'style': s:none })
-call Highlight('DiffText', { 'fg': s:none, 'bg': s:diff_text, 'style': s:bold })
+call Highlight('DiffChange', { 'fg': s:diff_change, 'bg': s:none, 'style': s:none })
+call Highlight('DiffText', { 'fg': s:diff_text, 'bg': s:none, 'style': s:bold })
 call Highlight('DiffDelete', { 'fg': s:diff_delete_fg, 'bg': s:diff_delete_bg, 'style': s:none })
-call Highlight('DiffAdd', { 'fg': s:none, 'bg': s:dark_green, 'style': s:none })
+call Highlight('DiffAdd', { 'fg': s:light_green, 'bg': s:none, 'style': s:none })
 call Highlight('diffAdded', { 'fg': s:light_green, 'bg': s:none, 'style': s:none })
 call Highlight('diffRemoved', { 'fg': s:magenta, 'bg': s:none, 'style': s:none })
 call Highlight('diffFile', { 'fg': s:white, 'bg': s:none, 'style': s:bold })
