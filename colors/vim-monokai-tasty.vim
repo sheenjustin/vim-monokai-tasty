@@ -462,6 +462,7 @@ call Highlight('typescriptGlobalNodeObjects', { 'fg': s:magenta, 'bg': s:none, '
 call Highlight('typescriptGlobalObjects', { 'fg': s:light_blue, 'bg': s:none, 'style': s:none })
 call Highlight('typescriptArrowFunction', { 'fg': s:light_blue, 'bg': s:none, 'style': s:none })
 call Highlight('typescriptFuncCall', { 'fg': s:light_blue, 'bg': s:none, 'style': s:none })
+call Highlight('typescriptFuncCallArg', { 'fg': s:none, 'bg': s:none, 'style': s:none })
 
 " TypeScript Treesitter
 call Highlight('typescriptTSBoolean', { 'fg': s:orange, 'bg': s:none, 'style': s:none })
@@ -507,6 +508,7 @@ call Highlight('vimParenSep', { 'fg': s:white, 'bg': s:none, 'style': s:bold })
 call Highlight('vimOperParen', { 'fg': s:light_blue, 'bg': s:none, 'style': s:italic })
 call Highlight('vimUserFunc', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
 call Highlight('vimFunction', { 'fg': s:orange, 'bg': s:none, 'style': s:none })
+call Highlight('vimVar', { 'fg': s:white, 'bg': s:none, 'style': s:none })
 " }}}
 
 " XML {{{
@@ -562,6 +564,7 @@ highlight default link markdownTODO Todo
 call Highlight('markdownCode', { 'fg': s:purple, 'bg': s:none, 'style': s:bold })
 call Highlight('markdownCodeBlock', { 'fg': s:light_blue, 'bg': s:none, 'style': s:none })
 call Highlight('markdownCodeDelimiter', { 'fg': s:light_green })
+call Highlight('markdownLinkText', { 'fg': s:none, 'bg': s:none, 'style': s:none })
 call Highlight('markdownLinkTextDelimiter', { 'fg': s:light_blue })
 call Highlight('markdownLinkDelimiter', { 'fg': s:light_blue })
 call Highlight('markdownUrl', { 'fg': s:orange, 'bg': s:none, 'style': s:none })
@@ -622,6 +625,8 @@ hi link pythonDoctest2 Comment
 call Highlight('netrwExe', { 'fg': s:yellow, 'bg': s:none, 'style': s:none })
 call Highlight('netrwDir', { 'fg': s:light_blue, 'bg': s:none, 'style': s:none })
 call Highlight('netrwClassify', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
+call Highlight('netrwTreeBar', { 'fg': s:light_grey, 'bg': s:none, 'style': s:none })
+call Highlight('netrwSuffixes', { 'fg': s:white, 'bg': s:none, 'style': s:none })
 " }}}
 
 " Nvim LSP {{{
@@ -643,6 +648,13 @@ call Highlight('DiagnosticUnderlineHint', { 'fg': s:none, 'bg': s:none, 'style':
 hi link LspDiagnosticsUnderlineHint DiagnosticUnderlineHint
 " }}}
 
+" nvim-tree {{{
+call Highlight('NvimTreeIndentMarker', { 'fg': s:light_grey, 'bg': s:none, 'style': s:none })
+call Highlight('NvimTreeFolderIcon', { 'fg': s:off_white, 'bg': s:none, 'style': s:none })
+call Highlight('NvimTreeGitDirtyIcon', { 'fg': s:orange, 'bg': s:none, 'style': s:none })
+call Highlight('NvimTreeGitNewIcon', { 'fg': s:light_blue, 'bg': s:none, 'style': s:none })
+" }}}
+
 if (has('nvim-0.8'))
   " Neovim specific Treesitter highlights
 
@@ -659,6 +671,23 @@ if (has('nvim-0.8'))
   call Highlight('@type.builtin.python', { 'fg': s:light_blue, 'bg': s:none, 'style': s:italic })
   call Highlight('@variable.builtin.python', { 'fg': s:light_grey, 'bg': s:none, 'style': s:italic })
   call Highlight('@variable.python', { 'fg': s:white, 'bg': s:none, 'style': s:none })
+  " }}}
+
+  " Kotlin {{{
+  call Highlight('@function.call.kotlin', { 'fg': s:light_blue, 'bg': s:none, 'style': s:none })
+  call Highlight('@function.builtin.kotlin', { 'fg': s:white, 'bg': s:none, 'style': s:italic })
+  call Highlight('@punctuation.bracket.kotlin', { 'fg': s:none, 'bg': s:none, 'style': s:none })
+  call Highlight('@punctuation.delimiter.kotlin', { 'fg': s:light_grey, 'bg': s:none, 'style': s:none })
+  call Highlight('@keyword.modifier.kotlin', { 'fg': s:white, 'bg': s:none, 'style': s:bold })
+  call Highlight('@keyword.kotlin', { 'fg': s:magenta, 'bg': s:none, 'style': s:italic })
+  call Highlight('@variable.kotlin', { 'fg': s:none, 'bg': s:none, 'style': s:none })
+  call Highlight('@lsp.type.variable.kotlin', { 'fg': s:none, 'bg': s:none, 'style': s:none })
+  call Highlight('@lsp.type.interface.kotlin', { 'fg': s:purple, 'bg': s:none, 'style': s:none })
+  call Highlight('@lsp.type.property.kotlin', { 'fg': s:none, 'bg': s:none, 'style': s:none })
+  call Highlight('@lsp.type.class.kotlin', { 'fg': s:light_blue, 'bg': s:none, 'style': s:italic })
+  call Highlight('@lsp.type.function.kotlin', { 'fg': s:none, 'bg': s:none, 'style': s:none })
+  call Highlight('@lsp.type.parameter.kotlin', { 'fg': s:orange, 'bg': s:none, 'style': s:none })
+  call Highlight('@type.kotlin', { 'fg': s:light_green, 'bg': s:none, 'style': s:italic })
   " }}}
 
   " Scala {{{
@@ -695,6 +724,19 @@ if (has('nvim-0.8'))
   call Highlight('@lsp.type.variable.typescript.tsx', { 'fg': s:none, 'bg': s:none, 'style': s:none })
   call Highlight('@lsp.type.property.typescript.tsx', { 'fg': s:none, 'bg': s:none, 'style': s:none })
   call Highlight('@lsp.type.namespace.typescript.tsx', { 'fg': s:none, 'bg': s:none, 'style': s:none })
+  " }}}
+
+  " Markdown {{{
+  call Highlight('@markup.heading.1.markdown', { 'fg': s:none, 'bg': s:none, 'style': s:none })
+  call Highlight('@markup.link.label.markdown_inline', { 'fg': s:none, 'bg': s:none, 'style': s:none })
+  call Highlight('@markup.link.markdown_inline', { 'fg': s:none, 'bg': s:none, 'style': s:none })
+  call Highlight('@markup.link.url.markdown_inline', { 'fg': s:none, 'bg': s:none, 'style': s:none })
+  call Highlight('@markup.raw.block.markdown', { 'fg': s:none, 'bg': s:none, 'style': s:none })
+  call Highlight('@_url.markdown_inline', { 'fg': s:none, 'bg': s:none, 'style': s:none })
+  call Highlight('@spell.markdown', { 'fg': s:none, 'bg': s:none, 'style': s:none })
+  call Highlight('@markup.list.markdown', { 'fg': s:none, 'bg': s:none, 'style': s:none })
+  call Highlight('@markup.list.unchecked.markdown', { 'fg': s:light_blue, 'bg': s:none, 'style': s:none })
+  call Highlight('@markup.list.checked.markdown', { 'fg': s:light_green, 'bg': s:none, 'style': s:none })
   " }}}
 
   " JavaScript {{{
